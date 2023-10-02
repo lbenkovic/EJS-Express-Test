@@ -1,0 +1,84 @@
+<%- include('../views/partials/header') %>
+<main>
+  <h1>Home</h1>
+<div>
+  <h3><%= helloPara %></h3>
+  <h3>This is a hello paragraph for <%= username %>!!!</h3>
+</div>
+<br>
+<div>
+  <h2>Reading from data.json file and looping through data</h2>
+  <ul>
+    <% moreData.forEach(d => { %>
+    <li>
+      <span>Ime: <%= d.ime %>, Godina: <%= d.age %>, Grad: <%= d.grad %>, Fakultet: <%= d.fakultet %></span>
+    </li>
+  <% }) %>
+  </ul>
+</div>
+<div>
+  <h2>Reading from an array defined in home.route.js</h2>
+  <ul>
+      <li>
+        <% for(let i=0; i<dataArray.length; i++) { %>
+        <span><%= dataArray[i] %>,&nbsp;</span>
+      <% } %>
+      </li>
+  </ul>
+</div>
+<div>
+  <h2>Readig from and object defined in home.route.js</h2>
+  <ul>
+    <% dataObj.forEach (dO => { %>
+      <li>
+        <span><%= dO.name %>&nbsp;<%= dO.surname %> is a character in a movie <%= dO.movie %>.</span>
+      </li>
+    <% }) %>
+
+  </ul>
+</div>
+<div>
+  <h2>Tell us what programming languages do you use?</h2>
+    <form action="/userProgLang" method="POST">
+      <input type="text" name="programminglanguage" placeholder="Programming Language Name">
+      <button type="submit">Tell us</button>
+    </form>
+</div>
+<br>
+<div>
+    <h2><%= username %> uses following programming languages: </h2>
+    <ul>
+      <% userLang.forEach (uL => { %>
+        <li>
+          <span><b>Programming Language: </b><%= uL.name_prog %></span>
+          <form action="/deleteProg" method="POST">
+            <input type="hidden" name="userProgId" value=<%= uL.id %>>
+            <button type="submit" style="background-color: red;">DELETE</button>
+          </form>
+          <form action="/updateUserProg" method="POST">
+            <input type="hidden" name="userProgId" value=<%= uL.id %>>
+            <input type="text" name="newProgName" id="newName_<%= uL.id %>" value="<%= uL.name_prog %>">
+            <button type="submit" style="background-color: green;">Save</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+</div>
+</main>
+
+<footer >
+  <%- include('../views/partials/footer') %>
+</footer>
+<%- include('../views/partials/mypartial') %>
+
+  </body> </html>
+  <style>
+    form {
+      display: inline;
+    }
+    li {
+      margin: 5px;
+    }
+  </style>
+  <script>
+  </script>

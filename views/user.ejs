@@ -1,0 +1,29 @@
+<%- include('../views/partials/header') %>
+<main>
+    <h1>Profile</h1>
+    <h1>Welcome, <%= username %></h1>
+    <form action="/newUsername" method="POST">
+      <input type="text" name="newUsername" placeholder="newUsername">
+      <button type="submit">Update Username</button>
+    </form>
+    <form action="/deleteUser" method="POST">
+      <button type="submit" style="background-color: red;" onclick="deleteAlert()">Delete User</button>
+    </form>
+</main>
+
+<footer >
+  <%- include('../views/partials/footer') %>
+</footer>
+<%- include('../views/partials/mypartial') %>
+  </body> </html>
+
+<script>
+function deleteAlert(){
+  alert("User deleted")
+}
+</script>
+<style>
+  form {
+    display: inline;
+  }
+</style>

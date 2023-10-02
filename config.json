@@ -1,0 +1,10 @@
+{
+    "jwtSecretKey": "Secure",
+    "db": {
+        "host": "db4free.net",
+        "user": "lukaproba",
+        "password": "21luka21",
+        "database": "poolinproba",
+        "connectTimeout": 60000
+    }
+}

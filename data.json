@@ -1,0 +1,26 @@
+[
+    {
+        "ime": "Luka",
+        "age": 26,
+        "grad": "Pula",
+        "fakultet": "FIPU"
+    },
+    {
+        "ime": "Dino",
+        "age": 23,
+        "grad": "Graz",
+        "fakultet": "None" 
+    },
+    {
+        "ime": "Marko",
+        "age": 23,
+        "grad": "Zagreb",
+        "fakultet": "TVZ"
+    },
+    {
+        "ime": "Karla",
+        "age": 24,
+        "grad": "Zagreb",
+        "fakultet": "FER"
+    }
+]

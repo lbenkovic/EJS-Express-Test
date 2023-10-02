@@ -1,0 +1,25 @@
+<%- include('../views/partials/header') %>
+<main>
+    <h2>Reading data from MySQL database </h2>
+<ul>
+    <% for(let i=0; i < theData.length; i++) { %>
+        <li>
+        <span><b>Name:</b> <%= theData[i].lang.name %></span>
+        </li>
+        <ul>
+           <% for (let j=0; j < theData[i].lesson.length; j++) { %>
+                <li>
+                    <span><b>Chapter:</b> <%= theData[i].lesson[j].chapter %></b></span>
+                </li>
+            <% } %>
+        </ul>
+    <% } %>
+</ul>
+<br>
+</main>
+<footer >
+    <%- include('../views/partials/footer') %>
+  </footer>
+  <%- include('../views/partials/mypartial') %>
+  
+    </body> </html>
